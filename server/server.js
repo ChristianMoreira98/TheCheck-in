@@ -48,9 +48,22 @@ participantes.push(novoParticipante) //Add o novo participante a lista.
 
 console.log(`Check-in confirmado: ${novoParticipante.nome}`) //Mostra no terminal que o check-in foi feito
 
-
+res.status(201).json({
+    sucesso: true,
+    mensagem: `Check-in confiramdo com sucesso, ${novoParticipante.nome}!`, //Envia a mensagem de sucesso para o front-end
+    participante: novoParticipante, //Envia os dados do participante criado
+    total: participantes.length, //Envia a quantidade total de participantes.
 }); 
 
+});
+
+app.get("/", (req, res) => {
+    res.send("API de check-in de eventos rodando"); //Responde com uma mensagem simples para testar a API
+});
+
+app.listen(PORT, () =>){
+    console.log(`Servidor rodando em http://localhost:${PORT}`); //Inicia o servidor na porta definida
+}
 
 
 
