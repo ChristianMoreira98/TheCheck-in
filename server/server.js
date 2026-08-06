@@ -61,9 +61,9 @@ app.get("/", (req, res) => {
     res.send("API de check-in de eventos rodando"); //Responde com uma mensagem simples para testar a API
 });
 
-app.listen(PORT, () =>){
+app.listen(PORT, () =>{
     console.log(`Servidor rodando em http://localhost:${PORT}`); //Inicia o servidor na porta definida
-}
+});
 
 
 
